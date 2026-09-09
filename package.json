@@ -1,0 +1,11 @@
+{
+  "name": "prajna-universal-search",
+  "private": true,
+  "packageManager": "pnpm@10.17.1",
+  "scripts": {
+    "dev:web": "pnpm --filter @prajna/web dev",
+    "dev:mobile": "pnpm --filter @prajna/mobile start",
+    "build:web": "pnpm --filter @prajna/web build",
+    "typecheck": "pnpm -r typecheck"
+  }
+}

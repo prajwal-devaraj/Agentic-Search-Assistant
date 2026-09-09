@@ -1,0 +1,27 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_DB: prajna
+      POSTGRES_USER: prajna
+      POSTGRES_PASSWORD: prajna
+    ports: ["5432:5432"]
+    volumes:
+      - prajna_pg:/var/lib/postgresql/data
+      - ./infra/postgres/init.sql:/docker-entrypoint-initdb.d/001-init.sql:ro
+
+  redis:
+    image: redis:8-alpine
+    ports: ["6379:6379"]
+
+  api:
+    build: ./services/api
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://prajna:prajna@postgres:5432/prajna
+      REDIS_URL: redis://redis:6379/0
+    ports: ["8000:8000"]
+    depends_on: [postgres, redis]
+
+volumes:
+  prajna_pg:

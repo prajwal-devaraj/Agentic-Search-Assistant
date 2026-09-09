@@ -1,0 +1,9 @@
+{
+  "name": "PRAJNA Agentic Search",
+  "short_name": "PRAJNA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090b10",
+  "theme_color": "#090b10",
+  "description": "Evidence-first universal agentic search"
+}

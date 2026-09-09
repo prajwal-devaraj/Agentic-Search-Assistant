@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name": "PRAJNA",
+    "slug": "prajna-agentic-search",
+    "scheme": "prajna",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "plugins": ["expo-router"],
+    "ios": { "supportsTablet": true, "bundleIdentifier": "dev.prajwal.prajna" },
+    "android": { "package": "dev.prajwal.prajna" },
+    "web": { "bundler": "metro" }
+  }
+}
